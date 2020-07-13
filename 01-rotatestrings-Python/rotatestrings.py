@@ -11,24 +11,24 @@ def fun_rotatestrings(s, n):
 	str = ""
 	if(abs(n) < l):
 		if (n > 0):
-			a = s[0:n]
-			b = s[n:]		
-			str = b + a
+			s1 = s[0:n]
+			s2 = s[n:]		
+			str = s2 + s1
 		elif (n < 0):
-			a = s[n:]
-			b = s[0:n]		
-			str = a + b
+			s1 = s[n:]
+			s2 = s[0:n]		
+			str = s1 + s2
 	elif(abs(n) > l):
 		if (n < 0):
 			n = n + l
-			a = s[n:]
-			b = s[0:n]		
-			str = a + b
+			s1 = s[n:]
+			s2 = s[0:n]		
+			str = s1 + s2
 		elif(n > 0):
 			n = n - l
-			a = s[0:n]
-			b = s[n:]		
-			str = b + a
+			s1 = s[0:n]
+			s2 = s[n:]		
+			str = s2 + s1
 	else:
 		str = s			
 	return str
