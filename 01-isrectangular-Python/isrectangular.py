@@ -9,6 +9,7 @@ def fun_isrectangular(l):
 	for i in l:
 		if len(i) != t:
 			flag = 1
+			break
 	if flag == 1:
 		return False
 	return True
