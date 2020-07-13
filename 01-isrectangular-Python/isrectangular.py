@@ -10,5 +10,3 @@ def fun_isrectangular(l):
 			return False
 	return True
 
-
-
