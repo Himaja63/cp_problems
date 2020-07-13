@@ -15,5 +15,3 @@ def fun_find_int_roots(a, b, c):
 		s = (r1, r2)
 		return s
 	return (r2, r1)
-
-
