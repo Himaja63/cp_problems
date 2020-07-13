@@ -7,7 +7,7 @@
 
 
 def fun_rotatestrings(s, n):
-	l = len(s) + 1
+	l = len(s)
 	str = ""
 	if(abs(n) < l):
 		if (n > 0):
@@ -29,6 +29,7 @@ def fun_rotatestrings(s, n):
 			a = s[0:n]
 			b = s[n:]		
 			str = b + a
-						
+	else:
+		str = s			
 	return str
 
