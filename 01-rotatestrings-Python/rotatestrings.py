@@ -29,6 +29,6 @@ def fun_rotatestrings(s, n):
 			a = s[0:n]
 			b = s[n:]		
 			str = b + a
-
+			
 	return str
 
