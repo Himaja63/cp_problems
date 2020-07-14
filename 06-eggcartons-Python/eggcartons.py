@@ -6,4 +6,12 @@
 
 def fun_eggcartons(eggs):
 	# your code goes here
-	return 1
+	n = eggs /12
+	s = str(n)
+	l = str.split('.')
+	if (l[1] > 0):
+		return l[0] + 1
+	else:
+		return l[0]
+
+
