@@ -13,4 +13,14 @@
 
 def dicetoorderedhand(a, b, c):
 	# your code goes here
-	pass
+	l = []
+	l.append(a)
+	l.append(b)
+	l.append(c)	
+	ma = max(l)
+	mi = min(l)
+	for i in l:
+		if (i != ma and i != mi):
+			mid = i
+	s = str(ma)+str(mid)+str(mi)
+	return int(s)
