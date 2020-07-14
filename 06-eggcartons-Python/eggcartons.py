@@ -8,7 +8,8 @@ def fun_eggcartons(eggs):
 	# your code goes here
 	n = eggs /12
 	s = str(n)
-	l = str.split('.')
+	l = s.split('.')
+# 	print(l[0])
 	if (int(l[1]) > 0):
 		return int(l[0]) + 1
 	else:
