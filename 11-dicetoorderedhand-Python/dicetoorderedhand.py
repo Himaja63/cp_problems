@@ -12,16 +12,18 @@
 # min(a,b,c) to find the smallest.
 
 def dicetoorderedhand(a, b, c):
-	# your code goes here
-	l = []
-	l.append(a)
-	l.append(b)
-	l.append(c)
-	t = tuple(l)
-	ma = max(t)
-	mi = min(t)
-	for i in t:
-		if (i != ma and i != mi):
-			mid = i
-	s = str(ma)+str(mid)+str(mi)
-	return int(s)
+	if (a == b == c):
+		return int(str(a)+str(b)+str(c))
+	else :		
+		l = []
+		l.append(a)
+		l.append(b)
+		l.append(c)
+		t = tuple(l)
+		ma = max(t)
+		mi = min(t)
+		for i in t:
+			if (i != ma and i != mi):
+				mid = i
+		s = str(ma)+str(mid)+str(mi)
+		return int(s)
