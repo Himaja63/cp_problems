@@ -28,6 +28,61 @@
 # into a sorted hand.
 # Hint: Also, remember to use % to get the one's digit, and use //= to get rid of the one's digit.
 
+def dicetoorderedhand(a, b, c):
+	if (a == b == c):
+		return int(str(a)+str(b)+str(c))
+	elif (a == b and c != a):
+		if (a > c):
+			return int(str(a)+str(b)+str(c))
+		else:
+			return int(str(c)+str(a)+str(b))
+	elif(b == c and a != b):
+		if (b > a):
+			return int(str(b)+str(c)+str(a))
+		else:
+			return int(str(a)+str(b)+str(c))
+	elif (a == c and b != a):
+		if (a > b):
+			return int(str(a)+str(c)+str(b))
+		else:
+			return int(str(b)+str(a)+str(c))
+	
+	else :		
+		l = []
+		l.append(a)
+		l.append(b)
+		l.append(c)
+		t = tuple(l)
+		ma = max(t)
+		mi = min(t)
+		for i in t:
+			if (i != ma and i != mi):
+				mid = i
+		s = str(ma)+str(mid)+str(mi)
+		return int(s)
+# print(dicetoorderedhand(4, 1, 2))
+
 def playstep2(hand, dice):
-	# your code goes here
-	pass
+	# your code goes here	
+	l = []
+	l1 = []
+	s1 = ""
+	s2 = ""
+	for i in range(len(str(hand))):
+		l.append(hand%10)
+		hand = hand // 10
+# 	print(l)
+	for i in range(len(str(dice))):
+		l1.append(dice%10)
+		dice = dice // 10
+# 	print(l1)
+	for i in range(len(l)):
+		if (l[i] != 4):
+			l[i] = l1[0]
+			l1.pop(0)
+	s1 = dicetoorderedhand(l[0], l[1], l[2])
+	for k in range(len(l1)):
+		s2 = s2 + str(l1[k])
+	
+
+	return (s1, int(s2[::-1]))
