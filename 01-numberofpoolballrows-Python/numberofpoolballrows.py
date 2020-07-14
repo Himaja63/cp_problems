@@ -8,7 +8,7 @@
 def fun_numberofpoolballrows(balls):
 	add = 0	
 	c = 0
-	for i in range(1,balls):
+	for i in range(1,balls+1):
 		c = c + 1
 		add = add + i
 		if (add >= balls):
