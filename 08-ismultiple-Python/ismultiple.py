@@ -6,4 +6,15 @@
 
 
 def fun_ismultiple(m, n):
-	return False # replace with your solution
+	if (m == 0):
+		return True
+	elif (n == 0):
+		return False
+	else :
+		div = m / n
+		l = str(div).split('.')
+		if (int(l[1])>0):
+			return False
+		else :
+			return True
+	
