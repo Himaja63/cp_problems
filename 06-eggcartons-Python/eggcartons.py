@@ -9,9 +9,9 @@ def fun_eggcartons(eggs):
 	n = eggs /12
 	s = str(n)
 	l = str.split('.')
-	if (l[1] > 0):
-		return l[0] + 1
+	if (int(l[1]) > 0):
+		return int(l[0]) + 1
 	else:
-		return l[0]
+		return int(l[0])
 
 
