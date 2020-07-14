@@ -16,10 +16,11 @@ def dicetoorderedhand(a, b, c):
 	l = []
 	l.append(a)
 	l.append(b)
-	l.append(c)	
-	ma = max(l)
-	mi = min(l)
-	for i in l:
+	l.append(c)
+	t = tuple(l)
+	ma = max(t)
+	mi = min(t)
+	for i in t:
 		if (i != ma and i != mi):
 			mid = i
 	s = str(ma)+str(mid)+str(mi)
