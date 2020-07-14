@@ -14,6 +14,22 @@
 def dicetoorderedhand(a, b, c):
 	if (a == b == c):
 		return int(str(a)+str(b)+str(c))
+	elif (a == b and c != a):
+		if (a > c):
+			return int(str(a)+str(b)+str(c))
+		else:
+			return int(str(c)+str(a)+str(b))
+	elif(b == c and a != b):
+		if (b > a):
+			return int(str(b)+str(c)+str(a))
+		else:
+			return int(str(a)+str(b)+str(c))
+	elif (a == c and b != a):
+		if (a > b):
+			return int(str(a)+str(c)+str(b))
+		else:
+			return int(str(b)+str(a)+str(c))
+	
 	else :		
 		l = []
 		l.append(a)
