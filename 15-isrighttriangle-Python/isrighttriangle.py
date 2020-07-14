@@ -18,8 +18,8 @@ def isrighttriangle(x1, y1, x2, y2, x3, y3):
 	s2 = fun_distance(x2, y2, x3, y3)
 	s3 = fun_distance(x3, y3, x1, y1)
 	sum1 = s1**2 + s2**2
-	sum2 = s2**2 + s3**2
-	sum3 = s3**2 + s1**2
+	# sum2 = s2**2 + s3**2
+	# sum3 = s3**2 + s1**2
 	if (math.isclose(sum1, s3**2)):
 		return True
 	else:
