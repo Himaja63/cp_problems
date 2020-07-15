@@ -31,4 +31,6 @@ class Classy(object):
                 score = score + 4
             if item == "monocle":
                 score = score + 5
+            else:
+                score = score + 0
         return score
