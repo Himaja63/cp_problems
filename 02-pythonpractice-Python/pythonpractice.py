@@ -19,8 +19,8 @@ class Classy(object):
     def __init__(self):
         self.items = []
         
-    def addItem(self, word):
-        self.items.append(word)
+    def addItem(self, string):
+        self.items.append(string)
 
     def clasiness(self):
         score = 0
