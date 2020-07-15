@@ -7,7 +7,7 @@ def fun_get_kth_digit(digit, k):
 	s = str(digit)
 	l = []
 	for i in range(len(s)):
-		rem = digit % 10
+		rem = abs(digit) % 10
 		digit = digit // 10
 		l.append(rem)
 	if (k < len(s)):
