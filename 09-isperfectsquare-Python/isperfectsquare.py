@@ -6,8 +6,8 @@
 import math
 def isperfectsquare(n):
 	# your code goes here
-	s = str(n)
-	if(s.isnumeric):
+	# s = str(n)
+	if(n.isnumeric):
 		return True
 	else:
 		return False
