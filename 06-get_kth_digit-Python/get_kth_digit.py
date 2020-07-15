@@ -10,4 +10,7 @@ def fun_get_kth_digit(digit, k):
 		rem = digit % 10
 		digit = digit // 10
 		l.append(rem)
-	return l[k]
+	if (k < len(s)):
+		return l[k]
+	else:
+		return 0
