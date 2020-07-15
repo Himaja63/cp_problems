@@ -24,11 +24,11 @@ class Classy(object):
 
     def clasiness(self):
         score = 0
-        for i in self.items:
-            if i == "tophat":
+        for item in self.items:
+            if item == "tophat":
                 score = score + 2
-            if i == "bowtie":
+            if item == "bowtie":
                 score = score + 4
-            if i == "monoclone":
+            if item == "monocle":
                 score = score + 5
         return score
