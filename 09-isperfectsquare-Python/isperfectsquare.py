@@ -6,11 +6,8 @@
 import math
 def isperfectsquare(n):
 	# your code goes here
-	if(isinstance(n, int) and n > 0):
-		per = math.sqrt(n)
-		if (int(str(per).split('.')[1])==0):
-			return True
-		else:
-			return False
+	s = str(n)
+	if(s.isnumeric):
+		return True
 	else:
 		return False
