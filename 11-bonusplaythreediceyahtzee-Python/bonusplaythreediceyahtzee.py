@@ -38,7 +38,136 @@
 # assert(bonusPlayThreeDiceYahtzee(2333413) == (333, 29))
 # assert(bonusPlayThreeDiceYahtzee(2333555) == (555, 35))
 
+def score(hand):
+	l = []
+	for i in range(len(str(hand))):
+		rem = hand % 10
+		l.append(rem)
+		hand = hand // 10
+	if(l[0] == l[1] == l[2]):
+		return 20 + l[0] + l[1] + l[2]
+	elif(l[0]==l[1]):
+		return 10 + l[0] + l[1]
+	elif(l[1]==l[2]):
+		return 10+l[1]+l[2]
+	elif(l[0]==l[2]):
+		return 10+l[0]+l[2]
+	else:
+		return max(l)
+
+def pick(hand):
+	z = []
+	for i in range(len(str(hand))):
+		rem = hand % 10
+		z.append(rem)
+		hand = hand // 10
+	return z
+
+def desc(arr):
+	# arr = pick(result)
+	s = ""
+	if (arr[0] != arr[1] != arr[2]):
+		ma = max(arr)
+		arr.remove(ma)
+		mi = min(arr)
+		arr.remove(mi)
+		mid = arr[0]
+		s = str(ma)+str(mid)+str(mi)
+		return int(s)
+	elif (arr[0] == arr[1] and arr[0] != arr[2]):
+		if(arr[0] > arr[2]):
+			s = str(arr[0])+str(arr[1])+str(arr[2])
+			return int(s)
+		else:
+			s = str(arr[2])+str(arr[1])+str(arr[0])
+			return int(s)
+	elif (arr[1] == arr[2] and arr[0] != arr[1]):
+		if(arr[0] > arr[2]):
+			s = str(arr[0])+str(arr[1])+str(arr[2])
+			return int(s)
+		else:
+			s = str(arr[2])+str(arr[1])+str(arr[0])
+			return int(s)
+	elif (arr[0] == arr[2] and arr[0] != arr[1]):
+		if(arr[0] > arr[1]):
+			s = str(arr[0])+str(arr[2])+str(arr[1])
+			return int(s)
+		else:
+			s = str(arr[1])+str(arr[0])+str(arr[2])
+			return int(s)
+	else:
+		s = str(arr[0])+str(arr[1])+str(arr[2])
+		return int(s)
+
+def twoEqual(arr):
+	if (arr[0] == arr[1] and arr[0] != arr[2]):
+		return arr[2]
+	elif (arr[1] == arr[2] and arr[0] != arr[1]):
+		return arr[0]
+	elif (arr[0] == arr[2] and arr[0] != arr[1]):
+		return arr[1]
+
+def truefalse(arr):
+	if (arr[0] == arr[1] == arr[2]):
+		return 1
+	if (arr[0] == arr[1] or arr[1] == arr[2] or arr[0] == arr[2]):
+		return 2
+	else:
+		return 3
+
+def game(y, dice):
+	num = truefalse(y)	
+	if (num == 1):
+		s = str(y[0]) + str(y[1]) + str(y[2])		
+		return (int(s),dice)
+	elif (num == 2):
+		y.remove(twoEqual(y))
+# 		print(y,"rrrrrrrr")
+		rem = dice % 10
+		y.append(rem)
+# 		print(y, "aaaaaa")
+		dice = dice // 10
+		y = desc(y)
+# 		print(y, "dddddd")
+# 		st = str(y[0]) + str(y[1]) + str(y[2])
+		return (y, dice)
+	elif (num == 3):
+		y = desc(y)
+		y = pick(int(str(y)[::-1]))
+# 		print(y, "aaaaaa")
+		y.pop()
+		y.pop()
+# 		print(y, "bbbbbb")
+		for i in range(2):
+			rem = dice % 10
+			y.append(rem)
+			dice = dice // 10
+# 		print(y, "11111111")
+# 		print(dice, "ddd111")
+		s = str(y[0]) + str(y[1]) + str(y[2])
+		return (int(s),dice)
 
 def bonusplaythreediceyahtzee(dice):
-	# Your code goes here
-	pass
+    a = dice / 1000
+    arr = str(a).split('.')
+    hand = int(arr[1])
+    dice = int(arr[0])
+    y = pick(hand)
+    while (dice != 0):
+        
+        if(truefalse(y) == 1):
+            g = game(y, dice)
+            break
+        elif(truefalse(y) == 2):
+            g = game(y, dice)
+            y = pick(g[0])
+            dice = g[1]
+            break
+        else:
+            g = game(y, dice)
+            y = pick(g[0])
+            dice = g[1]
+            # print(y, "yyyyyyyyyy")
+            # print(dice, "222222")
+    return (g[0], score(g[0]))
+	
