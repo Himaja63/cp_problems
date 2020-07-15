@@ -19,7 +19,7 @@ def fun_set_kth_digit(n, k, d):
 		if (i != 0):
 			st = st + str(i)
 	r = int(st[::-1])
-	if (n > 0):
+	if (int(s) > 0):
 		return r
 	else:
 		r = r * (-1)
