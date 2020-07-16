@@ -14,10 +14,16 @@
 
 def fun_fabricyards(inches):
 	# your code goes here
-	return 1
+	res = inches / 36
+	l = str(res).split('.')
+	if (int(l[1]) == 0):
+		return int(l[0])
+	else:
+		return int(l[0])+1
+	
 
 def fun_fabricexcess(inches):
 	# your code goes here
-	return 1
-
+	res = fun_fabricyards(inches)
+	return 36*res - inches
 
