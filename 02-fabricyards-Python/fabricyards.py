@@ -11,7 +11,6 @@
 # fabric that must be purchased (as purchases must be in whole yards)
 # . Hint: you may want to use fabricYards, which you just wrote!
 
-
 def fun_fabricyards(inches):
 	# your code goes here
 	res = inches / 36
