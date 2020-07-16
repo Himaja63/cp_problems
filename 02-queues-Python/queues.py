@@ -18,5 +18,5 @@ class Queue:
 
     def dequeue(self):
         # pass
-        val = self.storage.pop()
+        val = self.storage.pop(0)
         return val
