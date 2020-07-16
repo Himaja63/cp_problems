@@ -14,6 +14,25 @@
 # assert(ishappynumber(404) == True)
 # assert(ishappynumber(405) == False)
 
+def numSquareSum(n): 
+    squareSum = 0
+    while(n): 
+        squareSum += (n % 10) * (n % 10)
+        n = int(n / 10)
+    return squareSum
+
 def ishappynumber(n):
-	# your code goes here
-	pass
+	if (n > 0):
+		temp1 = n
+		temp2 = n
+		while(True):
+			temp1 = numSquareSum(temp1)
+			temp2 = numSquareSum(numSquareSum(temp2))
+			if (temp1 != temp2):
+				continue
+			else:
+				break
+		return (temp1 == 1)
+	else:
+		return False
+	
