@@ -10,6 +10,8 @@ def issorted(a):
 	l = sorted(a)	
 	if(l == a):
 		return True
+	elif(l[::-1] == a):
+		return True
 	else:
 		return False
 
