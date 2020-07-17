@@ -12,5 +12,24 @@
 
 
 def fun_isfactorish(n):
-	return False
+	flag = 0
+	if (len(str(n)) != 3):
+		return False
+	if (len(str(n)) == 3):
+		l = list(str(n))
+		if (l[0] != l[1] != l[2] and int(l[0]) > 0 and int(l[1]) > 0 and int(l[2]) > 0):
+			for i in l:
+				if (n % int(i) != 0):
+					flag = 1
+					break
+			if (flag == 1):
+				return False
+			else:
+				return True
+		else:
+			return False
+	else:
+		return False	
+
+	
 
