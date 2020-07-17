@@ -6,5 +6,25 @@
 # is a rotation of itself.
 
 def isrotation(x, y):
-	# Your code goes here
-	pass
+	d = 0
+	flag = 0
+	s1 = str(x)
+	s2 = str(y)
+	r = ""
+	if (len(s1) == len(s2)):
+		while (d < len(s1)):
+			r1 = s1[0 : len(s1)-d]
+			r2 = s1[len(s1)-d : ]
+			r = r2+r1
+			if (r == s2):
+				flag = 1
+				break
+			d = d+1
+		if (flag == 1):
+			return True
+		elif(s2 == s1[::-1]):
+			return True
+		else:
+			return False
+	else:
+		return False
