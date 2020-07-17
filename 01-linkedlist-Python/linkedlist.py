@@ -60,8 +60,7 @@ class LinkedList(object):
                 count += 1
         elif position == 1:
             new_element.next = self.head
-            self.head = new_element
-        
+            self.head = new_element     
     
     
     def delete(self, value):
