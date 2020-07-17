@@ -13,6 +13,7 @@
 
 def fun_isfactorish(n):
 	flag = 0
+	n = abs(n)
 	if (len(str(n)) != 3):
 		return False
 	if (len(str(n)) == 3):
