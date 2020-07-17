@@ -15,3 +15,5 @@ def smallestdifference(a):
 		return small
 	else:
 		return -1
+
+		
