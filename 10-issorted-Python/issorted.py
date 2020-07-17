@@ -7,8 +7,7 @@
 
 def issorted(a):
 	# your code goes here
-	l = a
-	l.sort()
+	l = sorted(a)	
 	if(l == a):
 		return True
 	else:
