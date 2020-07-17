@@ -30,7 +30,8 @@ def fun_replace(s1, s2, s3):
 							y = y+1
 						l1[x] = l3[y:]
 
-		merged = list(itertools(*l1))
+		list2d = l1
+		merged = list(itertools.chain(*list2d))
 		s = "".join(merged)
 		for i in s:
 			if(i != "-"):
