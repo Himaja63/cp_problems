@@ -11,12 +11,15 @@
 def inverselookandsay(a):
 	# Your code goes here
 	l = []
-	if (len(a) == 0):
+	if (len(a) == 0 ):
 		return l
 	else:
 		for i in range(len(a)):
 			x = a[i]
-			for j in range(x[0]):
-				l.append(x[1])
+			if(len(x)>0):
+			    for j in range(x[0]):
+			        l.append(x[1])
+			else:
+			    l = []
 		return l
 
