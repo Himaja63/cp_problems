@@ -11,7 +11,6 @@
 def inverselookandsay(a):
 	# Your code goes here
 	l = []
-	s = ""
 	if (len(a) == 0):
 		return l
 	else:
