@@ -7,4 +7,10 @@
 
 def multipolynomials(p1, p2):
 	# Your code goes here
-	pass
+	m = len(p1)
+	n = len(p2)
+	prod = [0] * (m+n-1)
+	for i in range(m):
+		for j in range(n):
+			prod[i+j] += p1[i]*p2[j]
+	return prod
