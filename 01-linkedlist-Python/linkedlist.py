@@ -37,9 +37,9 @@ class LinkedList(object):
             return None
         while(current and count <= position):
             if (count == position):
-                return current.value
-            count = count+1
+                return current            
             current = current.next
+            count = count+1
         return None
 
     
