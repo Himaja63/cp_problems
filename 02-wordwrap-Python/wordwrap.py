@@ -15,7 +15,6 @@
 # c-de
 # -fgh""")
 
-
 def fun_wordwrap(s, n):
 	s = s.strip()
 	s = s.replace(" ", "-")
