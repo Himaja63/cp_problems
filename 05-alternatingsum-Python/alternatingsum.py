@@ -5,7 +5,18 @@
 
 
 
-def fun_alternatingsum(a): 
-	return 0
+def fun_alternatingsum(a):
+	sum = 0
+	if(len(a) == 0):
+		return 0
+	else:
+		for i in range(len(a)):
+			if i%2 == 0:
+				sum = sum+a[i]
+			else:
+				sum = sum - a[i]
+		return sum
+
+	
 
 
