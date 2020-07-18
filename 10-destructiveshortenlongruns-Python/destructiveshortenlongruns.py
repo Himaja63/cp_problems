@@ -11,7 +11,40 @@
 # L = [2, 3, 5, 5, 5, 3]
 # shortenLongRuns(L, 3)
 # assert(L == [2, 3, 5, 5, 3])
+def lookandsay(a):
+	# Your code goes here
+	l = []
+	l1 = []
+	if len(a) == 0:
+	    return l
+	else:
+	    i = 0
+	    j = 0
+	    c = 0
+	    l = a
+	    while(i < len(a) and j < len(l)):
+	        if(a[i] == l[j]):
+	            c = c+1
+	            j = j + 1
+	        else:
+	            t = (c,a[i])
+	            l1.append(t)
+	            i = j
+	            c = 0
+	    else:
+	        t = (c,a[i])
+	        l1.append(t)
+	    return l1
 
 def destructiveshortenlongruns(L, k):
-	# Your code goes here
-	pass
+	l = []
+	x = lookandsay(L)
+	for i in range(len(x)):
+		y = x[i]
+		if(y[0]>1 and k <= y[0]):
+			for i in range(k-1):
+				l.append(y[1])
+		else:
+			for j in range(y[0]):
+				l.append(y[1])
+	return l
