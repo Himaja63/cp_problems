@@ -9,4 +9,26 @@
 
 def lookandsay(a):
 	# Your code goes here
-	pass
+	l = []
+	l1 = []
+	if len(a) == 0:
+	    return l
+	else:
+	    i = 0
+	    j = 0
+	    c = 0
+	    l = a
+	    while(i < len(a) and j < len(l)):
+	        if(a[i] == l[j]):
+	            c = c+1
+	            j = j + 1
+	        else:
+	            t = (c,a[i])
+	            l1.append(t)
+	            i = j
+	            c = 0
+	    else:
+	        t = (c,a[i])
+	        l1.append(t)
+	    return l1
+	        
