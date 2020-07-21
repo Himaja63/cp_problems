@@ -3,7 +3,7 @@
 # is the result of multiplying the two matrices. Return None if the 
 # two matrices cannot be multiplied for any reason.
 
-def isSquarematrix(m):
+def isSquareMatrix(m):
     flag = 0
     for i in range(len(m)):
         for j in range(len(m)):
@@ -18,8 +18,8 @@ def isSquarematrix(m):
 
 def isCompatible(m1, m2):
     flag = 0
-    if(isSquarematrix(m1) and isSquarematrix(m2)):
-        if(len(m1[0]) != len(m2)):
+    if(isSquareMatrix(m1) and isSquareMatrix(m2)):
+        if (len(m1[0]) != len(m2)):
             return False
         else:
             return True
@@ -33,8 +33,9 @@ def fun_matrixmultiply(m1, m2):
         for j in range(len(m2[0])):
             c.append(0)
         res.append(c)
-    
-    if(isCompatible(m1.m2)):
+    # return res
+            
+    if(isCompatible(m1, m2)):
         for i in range(len(m1)):
             for j in range(len(m2[0])):
                 for k in range(len(m2)):
@@ -42,7 +43,6 @@ def fun_matrixmultiply(m1, m2):
         return res
     else:
         return None
-
 
 
 
