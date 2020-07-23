@@ -9,5 +9,32 @@
 
 import math
 
+def isKaprekarnumber(n):
+    res = n**2
+    s = str(res)
+    flag = 0
+    if(n == 1):
+        return True
+    elif(len(s) > 1):
+        for i in range(1, len(s)):
+            sum = 0
+            if(int(s[i:]) != 0 and int(s[:i])+int(s[i:]) == n):
+                flag = 1
+                break
+        if (flag == 1):
+            return True
+        else:
+            return False
+    else:
+        return False
+
 def fun_nth_kaprekarnumber(n):
-    return 1;
+    c = 0
+    i = 1
+    while(c <= n):
+        if(isKaprekarnumber(i)):
+            c = c+1
+            i = i+1
+        else:
+            i = i+1
+    return i - 1
