@@ -22,45 +22,46 @@ def isPrime(num):
         return True
     else:
         return False
-
+        
 def rotateLeft(n):
-	s = str(n)
-	d = 1
-	l = []
-	res = 0
-	while res != n:
-		Lfirst = s[0:d]
-		Lsecond = s[d:]
-		L = Lsecond+Lfirst
-		s = L
-		res = int(L)
-		l.append(res)
-	return l
+    s = str(n)
+    d = 1
+    l = []
+    # l.append(n)
+    res = 0
+    while res != n:
+        # print("aaaaaaaaaa")
+        Lfirst = s[0 : d] 
+        Lsecond = s[d :]
+        L = Lsecond + Lfirst
+        s = L
+        res = int(L)
+        l.append(res)
+    return l
 
 def isCircularprime(n):
-	l = rotateLeft(n)
-	flag = 0
-	for i in l:
-		if isPrime(i):
-			flag = 0
-		else:
-			flag = 1
-			break
-	if flag == 0:
-		return True
-	else:
-		return False
-
+    l = rotateLeft(n)
+    flag = 0
+    for i in l:
+        if isPrime(i):
+            flag = 0
+        else:
+            flag = 1
+            break
+    if flag == 0:
+        return True
+    else:
+        return False
+        
 def nthcircularprime(n):
-	c = 0
-	i = 1
-	while(c < n):
-		if(i == 11 or i == 111):
-			i = i+1
-		if(isCircularprime(i)):
-			c = c+1
-			i = i+1
-		else:
-			i = i+1
-	return i - 1
-		
+    c = 0
+    i = 1
+    while(c < n):
+        if (i == 11 or i == 111):
+            i = i+1
+        if(isCircularprime(i)):
+            c = c+1
+            i = i+1
+        else:
+            i = i+1
+    return i-1
