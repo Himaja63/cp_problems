@@ -46,6 +46,6 @@ def nthpowerfulnumber(n):
 			i = i+1
 	return i-1
 	
-print(nthpowerfulnumber(10))
+
 	
 	
