@@ -4,31 +4,30 @@
 # number n is a product of x and (x+1).
 
 def isPronicnumber(n):
-	k = 1
-	flag = 0
-	if n == 0:
-		return True
-	else:
-		while(k < n):
-			pro = k * (k+1)
-			if(pro == n):
-				flag = 1
-				break
-			else:
-				k = k+1
-		if flag == 1:
-			return True
-		else:
-			return False
-		
+    k = 1
+    flag = 0
+    if n == 0:
+        return True
+    else:
+        while (k < n):
+            pro = k * (k+1)
+            if(pro == n):
+                flag = 1
+                break
+            else:
+                k = k+1
+        if flag == 1:
+            return True
+        else:
+            return False
 
 def nthpronicnumber(n):
 	c = 0
 	i = 0
-	while(c <= n):
-		if(isPronicnumber(i)):
-			c = c+1
-			i = i+1
-		else:
-			i = i+1
+	while (c <= n):
+	    if (isPronicnumber(i)):
+	        c = c + 1
+	        i = i+1
+	    else:
+	        i = i+1
 	return i - 1
