@@ -12,12 +12,11 @@ def isPronicnumber(n):
         while (k < n):
             pro = k * (k+1)
             if(pro == n):
-                flag = 1
+                return True
                 break
             else:
                 k = k+1
-        if flag == 1:
-            return True
+        
         else:
             return False
 
