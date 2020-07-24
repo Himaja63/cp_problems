@@ -4,5 +4,14 @@
 # 76 and 890625 are all automorphic numbers.
 
 def nthautomorphicnumbers(n):
-	# Your code goes here
-	pass
+	c = 0
+	i = 0
+	while(c<n):
+		sqr = i**2
+		s = str(sqr)
+		if(s[len(s)-len(str(i)):] == str(i)):
+			c = c+1
+			i = i+1
+		else:
+			i = i+1
+	return i - 1
