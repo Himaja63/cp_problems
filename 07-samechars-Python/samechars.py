@@ -7,4 +7,16 @@
 
 def samechars(s1, s2):
 	# Your code goes here
-	pass
+	flag = 0
+	if (isinstance(s1, str) and isinstance(s2, str)):
+		for i in s2:
+			if i not in s1:
+				flag = 1
+				break
+		if (flag == 0):
+			return True
+		else:
+			return False
+	else:
+		return False
+
