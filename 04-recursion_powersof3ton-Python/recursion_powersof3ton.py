@@ -5,4 +5,13 @@
 
 def recursion_powersof3ton(n):
 	# Your code goes here
-	pass
+	n=int(n)
+	if n<=0:
+		return None
+	if n==1:
+		return [1] 
+	else:
+		if 1162261467 % n ==0:
+			return sorted([n]+recursion_powersof3ton(n-1))
+		else:
+			return recursion_powersof3ton(n-1)
