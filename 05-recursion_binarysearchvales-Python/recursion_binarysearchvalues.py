@@ -19,5 +19,22 @@
 
 def recursion_binarysearchvalues(L, v):
 	# Your codes goes here
-	pass
+	l=L
+	return send_list(L,l,v)
+
+	# print([(2,3),(3,5)]+ [(2,3),(3,5)])
+def send_list(L,l,v):
+	if len(L)==0:
+		return []
+	lo=L[0]
+	hi=L[len(L)-1]
+	mid=(len(L)-1)//2
+	print(L)
+	print(mid)
+	if L[mid]==v:
+		return [(l.index(L[mid]),v)]
+	elif L[mid] <v:
+		return [(l.index(L[mid]),L[mid])] + send_list(L[mid+1:], l,v)
+	else:	
+		return [(l.index(L[mid]),L[mid])] + send_list(L[:mid], l,v)
 	
