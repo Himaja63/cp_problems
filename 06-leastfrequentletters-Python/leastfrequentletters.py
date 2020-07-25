@@ -8,5 +8,21 @@
 # if s does not contain any alphabetic characters, the result should be the empty string ("")
 
 def leastfrequentletters(s):
-	# Your code goes here
-	pass
+	res = ""
+	st = ""
+	d = {}
+	min = 10
+	for i in s:
+		if((i>='a' and i<= 'z') or (i>='A' and i<='Z')):
+			res += i.lower()
+	for i in res:
+		c = res.count(i)
+		d[i] = c
+		if(c < min):
+			min = c
+	for i in d:
+		if(d[i] == min):
+			st += i
+	l = sorted(st)
+	st = "".join(l)
+	return st
