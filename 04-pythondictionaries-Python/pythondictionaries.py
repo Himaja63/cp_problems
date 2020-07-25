@@ -30,4 +30,30 @@ American City
 Asian City - Country
 Asian City - Country"""
 
-locations = {'North America': {'USA': ['Mountain View']}}
+locations = {'North America': {'USA': ['Mountain View', 'Atlanta']}, 'Asia':{'India':['Bangalore'], 'China': ['Shanghai']},'Africa':{'Egypt':['Cairo']} }
+lst=[]
+def sortUSA():
+    lst.sort()
+    return lst
+for location in locations.values():
+    # print(location)
+    for country in location:
+        #  print(state)
+         if country =='USA':
+             lst =location['USA']
+             print(sortUSA())
+
+dic={}
+def alphaAsia():
+    list=[]
+    for i in dic:
+        list.append(str(str(dic[i][0])+' - '+str(i)))
+    return list
+
+for loc in locations:
+    if loc =='Asia':
+        dic=locations['Asia']
+        x=alphaAsia()
+        print(x)
+
+        
