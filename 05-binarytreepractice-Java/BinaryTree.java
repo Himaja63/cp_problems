@@ -13,17 +13,24 @@ public class BinaryTree {
 	public Node root;
 	
 	public BinaryTree(int value) {
-        // Your code goes here
+		// Your code goes here
+		this.root=new Node(value);
 	}
 
 	public boolean search(int value) {
 		// Your code goes here
-		return true;
+		Node node =this.root;
+		return search_Node(node, value);
 	}
 
 	private boolean search_Node(Node node, int value) {
 		// Your code goes here
-		return false;
+		if (node == null) return false;
+		else if (node.value == value) return true;
+		boolean lft = search_Node(node.left, value);
+		if(lft) return lft;
+		boolean rght = search_Node(node.right, value);
+		return rght;
+		}
 
 	}
-}
